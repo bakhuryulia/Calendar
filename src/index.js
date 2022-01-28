@@ -1,1 +1,3 @@
-console.log(Hello)
+import "../styles/index.scss"
+
+document.getElementById("app")

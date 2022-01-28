@@ -1,7 +1,10 @@
 const path = require("path")
+
 const HTMLPlugin = require('html-webpack-plugin')
+const MiniCSSExtrectPlugin = require('mini-css-extract-plugin')
+
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { PassThrough } = require("stream")
+
 
 module.exports = {
     entry: {
@@ -12,21 +15,29 @@ module.exports = {
         filename: "app.bundle.js",
         clean: true
     },
-    devServer: {
-        port: 3000
-    },
     plugins: [
+        new MiniCSSExtrectPlugin({
+            filename: "styles.css"
+        }),
         new HTMLPlugin({
-            template: "./src/index.html"
+            title: "Website",
+            template: path.resolve(__dirname, "static/template.html"),
+            filename: "index.html",
+            inject: "body"
         }),
         new CleanWebpackPlugin()
     ],
     module: {
         rules: [
           {
-            test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
+            test: /\.s?[ac]ss$/,
+            use: [MiniCSSExtrectPlugin.loader, "css-loader", "sass-loader"],
           },
         ],
       },
+      devServer: {
+        port: 3000,
+        open: true,
+        hot: true 
+    },
 } 
