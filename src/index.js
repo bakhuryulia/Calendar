@@ -1,3 +1,3 @@
-import "../styles/index.scss"
+import '../styles/index.scss';
 
-document.getElementById("app")
+document.getElementById('app');

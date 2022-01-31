@@ -4,7 +4,9 @@
   "description": "\"\"",
   "main": "index.js",
   "scripts": {
-    "test": "\"\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js --fix",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "serve:dev": "webpack serve --mode development"
@@ -25,8 +27,16 @@
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "^2.5.1",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
