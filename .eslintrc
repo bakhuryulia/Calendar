@@ -1,4 +1,11 @@
-{
+{   "root": true,
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    },
     "env": {
         "browser": true,
         "es6": true,
@@ -9,10 +16,14 @@
         "airbnb"
     ],
     "rules": {
-        "import/extensions": "off",
+        "import/extensions": [
+            "error",
+            "never"
+        ],
         "no-alert": "off",
         "eol-last": "off",
         "no-tabs":"off",
-        "indent": [2, "tab"]
+        "indent": [2, "spaces"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }

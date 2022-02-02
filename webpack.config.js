@@ -32,6 +32,11 @@ module.exports = {
 				test: /\.s?[ac]ss$/,
 				use: [MiniCSSExtrectPlugin.loader, 'css-loader', 'sass-loader'],
 			},
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: require.resolve('babel-loader'),
+			},
 		],
 	},
 	devServer: {
