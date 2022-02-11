@@ -4,7 +4,7 @@ import { getMonthData } from "../calendar";
 const { DateTime } = require("luxon");
 
 const weekDays = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-const monthNames = [];
+const monthNames = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
 export default function Calendar() {
     const [currentDate, setCurrentDate] = useState(DateTime.now());
@@ -13,36 +13,24 @@ export default function Calendar() {
   
     return (
       <div className="calendar">
-        <header>
-          <button
+        <header className="headerCalendar">
+          <button className="buttonBack"
             onClick={() =>
               setCurrentDate((prevDate) => prevDate.minus({ month: 1 }))
             }
           >
             {"<"}
           </button>
+          <div> {
+            currentDate.month
+            }
+            </div>
+          <div> {
+            currentDate.year
+            }
+            </div>
   
-          {/* <select
-                ref={element => this.monthSelect = element}
-                value={this.month}
-                onChange={this.handleSelectChange}
-            >
-                {monthNames.map((name, index) =>
-                    <option key={name} value={index}>{name}</option>
-                )}
-            </select> */}
-  
-          {/* <select
-                ref={element => this.yearSelect = element}
-                value={this.year}
-                onChange={this.handleSelectChange}
-            >
-                {years.map(year =>
-                    <option key={year} value={year}>{year}</option> 
-                )}
-            </select> */}
-  
-          <button
+          <button className="buttonNext"
             onClick={() =>
               setCurrentDate((prevDate) => prevDate.plus({ month: 1 }))
             }
@@ -51,8 +39,8 @@ export default function Calendar() {
           </button>
         </header>
   
-        <table>
-          <thead>
+        <table className="days">
+          <thead className="nameDays">
             <tr>
               {weekDays.map((name) => (
                 <th key={name}>{name}</th>
@@ -67,11 +55,6 @@ export default function Calendar() {
                   date ? (
                     <td
                       key={index}
-                      // className={classnames('day', {
-                      //     'today': calendar.areEqual(date, currentDate),
-                      //     'selected': calendar.areEqual(date, selectedDate)
-                      // })}
-                      // onClick={() => this.handleDayClick(date)}
                     >
                       {date}
                     </td>

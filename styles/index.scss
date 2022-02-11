@@ -1,1 +1,35 @@
+.calendar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.headerCalendar {
+  width: 200px;
+  margin: auto;
+  background-color: rgb(192, 245, 245);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.days {
+  width: 200px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: auto;
+}
+
+.nameDays {
+  vertical-align: middle;
+  text-align: center;
+  height: 36px;
+}
+
+.calendar .day {
+  padding: 4px 8px;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid transparent;
+}
