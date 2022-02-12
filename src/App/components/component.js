@@ -1,13 +1,15 @@
+import { format } from "prettier";
 import React, {useState} from "react";
 import { getMonthData } from "../calendar";
 
 const { DateTime } = require("luxon");
 
 const weekDays = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-const monthNames = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
 
 export default function Calendar() {
     const [currentDate, setCurrentDate] = useState(DateTime.now());
+
   
     console.log(getMonthData(currentDate));
   
@@ -22,7 +24,7 @@ export default function Calendar() {
             {"<"}
           </button>
           <div> {
-            currentDate.month
+            currentDate.monthLong
             }
             </div>
           <div> {
