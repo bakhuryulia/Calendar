@@ -13,12 +13,12 @@ export default function Header({ setCurrentDate, currentDate }) {
     <header className="headerCalendar">
       <button
         type="button"
-        className="buttonBack"
+        className="buttonPrev"
         onClick={() => setCurrentDate(prevMonth)}
       >
         &lt;
       </button>
-      <div>
+      <div className="month">
         {currentDate.monthLong}
       </div>
       <div>

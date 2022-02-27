@@ -1,7 +1,6 @@
 const weekPattern = Array(7).fill(null);
 
-// eslint-disable-next-line import/prefer-default-export
-export function getMonthData(currentDate) {
+export default function getMonthData(currentDate) {
   if (!currentDate) {
     return null;
   }
