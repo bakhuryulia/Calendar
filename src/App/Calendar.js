@@ -1,11 +1,14 @@
-import React from "react";
-
 const weekPattern = Array(7).fill(null);
 
+// eslint-disable-next-line import/prefer-default-export
 export function getMonthData(currentDate) {
+  if (!currentDate) {
+    return null;
+  }
+
   const month = Array.from(
     { length: currentDate.daysInMonth },
-    (_, i) => i + 1
+    (_, i) => i + 1,
   );
 
   return month.reduce((acc, day) => {
@@ -15,7 +18,7 @@ export function getMonthData(currentDate) {
 
     return {
       ...acc,
-      [key]: acc[key].map((d, i) => (i + 1 === date.weekday ? date.day : d))
+      [key]: acc[key].map((d, i) => (i + 1 === date.weekday ? date.day : d)),
     };
   }, {});
 }

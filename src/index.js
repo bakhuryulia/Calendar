@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import '../styles/index.scss';
-import Component from './App/components/component';
+import Calendar from './App/components/Calendar';
 
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(<Calendar />, document.getElementById('root'));

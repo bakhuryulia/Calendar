@@ -23,7 +23,8 @@
         "no-alert": "off",
         "eol-last": "off",
         "no-tabs":"off",
-        "indent": [2, "spaces"],
+        "indent": ["error", 2],
+        "react/prop-types": 0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
 }
